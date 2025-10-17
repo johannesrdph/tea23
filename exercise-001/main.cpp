@@ -46,7 +46,11 @@ int main(int argc, char **argv) {
     fmt::println("Wert ConstLocal : {}",localVarConst);
     fmt::println("Adresse ConstLocal : {}",fmt::ptr(&localVarConst));
 
-    
-
+    /* Aufgabe 3*/
+    int* heapVar = new int(3);
+    fmt::println("Wert heapVar : {}",*heapVar);
+    fmt::println("Adresse heapVar : {}",fmt::ptr(heapVar));
+    fmt::println("Adresse vom Pointer heapVar : {}",fmt::ptr(&heapVar));
+    delete heapVar;
     return 0; /* exit gracefully*/
 }
