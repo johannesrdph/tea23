@@ -9,6 +9,9 @@ int globalVar0 = 2;
 static int staticVar = 3;
 const int constVar = 4;
 
+void foo();
+
+
 int main(int argc, char **argv) {
 
     /**
@@ -52,5 +55,15 @@ int main(int argc, char **argv) {
     fmt::println("Adresse heapVar : {}",fmt::ptr(heapVar));
     fmt::println("Adresse vom Pointer heapVar : {}",fmt::ptr(&heapVar));
     delete heapVar;
+    
+    /* Aufgabe 4*/    
+    foo();
+    fmt::println("Adresse von foo: {}", fmt::ptr(&foo));
     return 0; /* exit gracefully*/
 }
+/* Aufgabe 4*/
+void foo(){ 
+    fmt::println("Hello from foo!");
+    
+} 
+
