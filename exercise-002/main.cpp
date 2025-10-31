@@ -109,15 +109,16 @@ auto main(int argc, char** argv) -> int
 
     
 
-    // int undead = 7;
-
-    int main() {
+    
+/*Aufgabe 5*/
+int undead = 7;
+int main() {
     fmt::println("🪦 Globale Variable sagt: {}", undead);
     awaken();
     persistent();
     persistent();
     fmt::println("🪦 Globale Variable nach Aufruf: {}", undead);
-    }
+}
 
 /*
     fmt::print("Hello, {}!\n", argv[0]);
