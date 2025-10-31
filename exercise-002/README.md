@@ -113,6 +113,7 @@ void cursed() {
     char *soul = (char*)malloc(8);
     strcpy(soul, "boo!");
     fmt::println("{}", soul);
+    free{soul}; /* Eigene Lösung */
 }
 
 int main() {

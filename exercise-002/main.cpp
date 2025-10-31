@@ -47,6 +47,47 @@ auto main(int argc, char** argv) -> int
      * it is much more convenient than std::cout and printf
      * More info at https://fmt.dev/latest/api.html
      */
+
+
+
+     /* 
+     Antworten Aufgabe 1:
+     1: a, 2: b, 3:a , 4: a; 
+     
+     
+     Aufgabe 2: siehe zudem Readme (Eigene Lösung gibt hinzugefügten Code an),
+     
+        Bsp:1
+        In der Funktion Cursed fehlt die Funktion free. 
+        Durch Malloc wird jedes mal neuer Speicher im Stack belegt, 
+        der ohne free nicht wieder freigegeben wird.
+
+        Bsp:2
+        Da nach dem freigeben des Speicher nochmal auf die Variable zugegriffen wird,
+        kommt es zu undefinierten Verhalten.
+        Wird danach nochmal Speicher allokiert, wird der Speicher der alten Variable überschrieben.
+
+        Bsp:3
+        Durch das andauernde Aufrufen der malloc Funktion, ohne die Verwendung von free wird immer
+        mehr Speicher belegt. Das wird zu einem Stackoverflow führen, der das Programm beendet. 
+
+    Aufgabe 4:
+        - Wann tritt ein Stack Overflow auf? 
+        Wenn viel dynamischer Speicher allokiert wird, ohne ihn wieder freizugeben.
+        Das passiert insbesondere bei rekursivem Aufruf von malloc
+
+        - Warum entstehen Memory Leaks?
+        Wenn Speicher belegt, aber nicht wieder freigegeben wird
+
+        - Was ist gefährlicher: Ein Zombie-Pointer oder ein Leak?
+        Ein Zombie-Pointer, da dieser undefiniertes Verhalten verursachen kann
+
+        - Wie kann man solche Fehler frühzeitig erkennen?
+        
+     */
+
+
+
     fmt::print("Hello, {}!\n", argv[0]);
 
     doSomething(42);
