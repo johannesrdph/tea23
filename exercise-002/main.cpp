@@ -1,6 +1,6 @@
 #include <fmt/chrono.h>
 #include <fmt/format.h>
-
+#include "graveyard.h"
 /* .bss Segment */
 int foo;
 int foo2 = 0;
@@ -40,6 +40,8 @@ void doSomethingStatic()
     value = value + 1;
     fmt::print("doSomethingStatic, value {}\n", value);
 }
+   
+/*
 auto main(int argc, char** argv) -> int
 {
     /**
@@ -83,11 +85,25 @@ auto main(int argc, char** argv) -> int
         Ein Zombie-Pointer, da dieser undefiniertes Verhalten verursachen kann
 
         - Wie kann man solche Fehler frühzeitig erkennen?
-        
+
+
+     Aufgabe 5:   
      */
 
 
+    
 
+    // int undead = 7;
+
+    int main() {
+    fmt::println("🪦 Globale Variable sagt: {}", undead);
+    awaken();
+    persistent();
+    persistent();
+    fmt::println("🪦 Globale Variable nach Aufruf: {}", undead);
+    }
+
+/*
     fmt::print("Hello, {}!\n", argv[0]);
 
     doSomething(42);
@@ -121,4 +137,5 @@ auto main(int argc, char** argv) -> int
     fmt::print("Value of var2 {} address of var2 {}\n", var2, fmt::ptr(&var2));
 
     return 0; /* exit gracefully*/
-}
+
+
