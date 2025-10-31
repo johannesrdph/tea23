@@ -88,7 +88,23 @@ auto main(int argc, char** argv) -> int
 
 
      Aufgabe 5:   
-     */
+     
+    1. Wie unterscheiden sich die Adressen der drei `undead`-Variablen? 
+    Globale: Adresse Bleibt gleich, liegt im data-Segment 
+    Lokale: Adresse Ändert sich bei jedem Aufruf, liegt im Stack
+    Static: Adresse bleibt gleich, liegt im data-Segment
+    2. Warum bleibt der Wert in `persistent()` zwischen Aufrufen erhalten?  
+    Weil die static im data-Segment liegt und nach Ende der Funktion nicht gelöscht wird
+    3. Was passiert, wenn man `extern int undead;` in `graveyard.c` verwendet? 
+    Beide Greifen auf den selben Speicher zu, es wird keine neue variable angelegt
+    4. In welchem Speicherbereich liegen:
+    - die globale Variable `undead`?
+    data
+    - die lokale Variable in `awaken()`?
+    Stack
+    - die statische Variable in `persistent()`?
+    data
+*/
 
 
     
