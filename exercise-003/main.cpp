@@ -8,9 +8,7 @@ Fahre runter=3
 Garagentor zu=4
 Stop auf dem Weg nach unten=5
 Garagentor offen=6;
-
 */
-
 
 bool Taste;
 bool EndschalterUnten ;
