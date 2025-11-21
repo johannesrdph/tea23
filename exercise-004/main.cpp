@@ -5,6 +5,10 @@
 #include "config.h"
 #include "image.h"
 
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/imgproc.hpp>
+
 auto main(int argc, char **argv) -> int
 {
     /**
@@ -30,8 +34,16 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}!\n", app.get_name());
 
     /* INSERT YOUR CODE HERE */
-    fmt::print("{}",sizeof(image));
+    fmt::print("{}\n",sizeof(image)/sizeof(image[0]));
 
-    //cv::imdecode(image);
+    // image ist const unsigned char*, Länge ist width * height * 3 (für RGB)
+    cv::Mat img(image_height, image_width, CV_8UC3, (void*)image); 
+
+
+    // img kann jetzt direkt genutzt werden, z.B. Image anzeigen oder Parameter ausgeben
+    fmt::println("OpenCV Bild-Parameter:");
+    fmt::println("Breite: {}", img.cols);
+    fmt::println("Höhe: {}", img.rows);
+    fmt::println("Kanäle: {}", img.channels());
     return 0; /* exit gracefully*/
 }
